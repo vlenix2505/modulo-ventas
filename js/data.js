@@ -9,8 +9,8 @@ window.SEED_DATA = {
       "zona": "Lima"
     },
     {
-      "nombre": "Sofía Paredes",
-      "email": "sofia@empresa.com",
+      "nombre": "Roberto Laos",
+      "email": "roberto@empresa.com",
       "password": "1234",
       "zona": "Lima"
     },
@@ -27,7 +27,7 @@ window.SEED_DATA = {
       "zona": "Lima"
     },
     {
-      "nombre": "María Andrade",
+      "nombre": "María Gomez",
       "email": "maria@empresa.com",
       "password": "1234",
       "zona": "Lima"
@@ -86,7 +86,7 @@ window.SEED_DATA = {
       "subrubro1": "BOUTIQUE",
       "subrubro2": "INDEPENDIENTE",
       "sede": "Lima",
-      "vendedorEmail": "sofia@empresa.com"
+      "vendedorEmail": "roberto@empresa.com"
     },
     {
       "id": "CL007",
@@ -95,7 +95,7 @@ window.SEED_DATA = {
       "subrubro1": "RESORT",
       "subrubro2": "CADENA",
       "sede": "Lima",
-      "vendedorEmail": "sofia@empresa.com"
+      "vendedorEmail": "roberto@empresa.com"
     },
     {
       "id": "CL008",
@@ -104,7 +104,7 @@ window.SEED_DATA = {
       "subrubro1": "CEVICHERIA",
       "subrubro2": "MARINA",
       "sede": "Lima",
-      "vendedorEmail": "sofia@empresa.com"
+      "vendedorEmail": "roberto@empresa.com"
     },
     {
       "id": "CL009",
@@ -113,7 +113,7 @@ window.SEED_DATA = {
       "subrubro1": "CHIFA",
       "subrubro2": "SALON",
       "sede": "Lima",
-      "vendedorEmail": "sofia@empresa.com"
+      "vendedorEmail": "roberto@empresa.com"
     },
     {
       "id": "CL010",
@@ -122,7 +122,7 @@ window.SEED_DATA = {
       "subrubro1": "ESPECIALIDAD",
       "subrubro2": "CADENA",
       "sede": "Lima",
-      "vendedorEmail": "sofia@empresa.com"
+      "vendedorEmail": "roberto@empresa.com"
     },
     {
       "id": "CL011",
@@ -627,7 +627,7 @@ window.SEED_DATA = {
       "ventaId": "FT04-9000027",
       "clienteId": "CL009",
       "fecha": "2025-10-18",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "ALB005",
@@ -877,7 +877,7 @@ window.SEED_DATA = {
       "ventaId": "FT04-9000030",
       "clienteId": "CL010",
       "fecha": "2025-11-03",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "OSB005",
@@ -1039,7 +1039,7 @@ window.SEED_DATA = {
       "ventaId": "FT04-9000019",
       "clienteId": "CL006",
       "fecha": "2025-11-08",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LAH017",
@@ -1393,7 +1393,7 @@ window.SEED_DATA = {
       "ventaId": "FT01-9000017",
       "clienteId": "CL006",
       "fecha": "2025-12-05",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "OSE003",
@@ -1481,7 +1481,7 @@ window.SEED_DATA = {
       "ventaId": "FT04-9000032",
       "clienteId": "CL010",
       "fecha": "2025-12-08",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LAP002",
@@ -2159,7 +2159,7 @@ window.SEED_DATA = {
       "ventaId": "FT02-9000026",
       "clienteId": "CL008",
       "fecha": "2026-01-18",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "MRA003",
@@ -2335,7 +2335,7 @@ window.SEED_DATA = {
       "ventaId": "FT02-9000029",
       "clienteId": "CL010",
       "fecha": "2026-01-23",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LAH017",
@@ -2504,7 +2504,7 @@ window.SEED_DATA = {
       "ventaId": "FT02-9000024",
       "clienteId": "CL008",
       "fecha": "2026-02-13",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LAK002",
@@ -2541,7 +2541,7 @@ window.SEED_DATA = {
       "ventaId": "FT02-9000020",
       "clienteId": "CL006",
       "fecha": "2026-02-15",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "AZA001",
@@ -2578,7 +2578,7 @@ window.SEED_DATA = {
       "ventaId": "FT01-9000021",
       "clienteId": "CL007",
       "fecha": "2026-02-17",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LAA021",
@@ -2608,7 +2608,7 @@ window.SEED_DATA = {
       "ventaId": "FT02-9000023",
       "clienteId": "CL007",
       "fecha": "2026-02-23",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "AIB002",
@@ -2689,7 +2689,7 @@ window.SEED_DATA = {
       "ventaId": "FT01-9000025",
       "clienteId": "CL008",
       "fecha": "2026-02-28",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LCC001",
@@ -2807,7 +2807,7 @@ window.SEED_DATA = {
       "ventaId": "FT02-9000028",
       "clienteId": "CL009",
       "fecha": "2026-03-28",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "AEA006",
@@ -2881,7 +2881,7 @@ window.SEED_DATA = {
       "ventaId": "FT01-9000031",
       "clienteId": "CL010",
       "fecha": "2026-03-31",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "LBA005",
@@ -3110,7 +3110,7 @@ window.SEED_DATA = {
       "ventaId": "FT01-9000022",
       "clienteId": "CL007",
       "fecha": "2026-04-28",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "VGA004",
@@ -3471,7 +3471,7 @@ window.SEED_DATA = {
       "ventaId": "FT01-9000018",
       "clienteId": "CL006",
       "fecha": "2026-05-31",
-      "vendedorEmail": "sofia@empresa.com",
+      "vendedorEmail": "roberto@empresa.com",
       "items": [
         {
           "codigo": "ADS010",

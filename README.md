@@ -11,7 +11,7 @@ proceso actual** de toma de pedidos y validarlo con usuarios.
 | Correo               | Contraseña | Sede |
 |----------------------|------------|------|
 | `juan@empresa.com`   | `1234`     | Lima |
-| `sofia@empresa.com`  | `1234`     | Lima |
+| `roberto@empresa.com`  | `1234`     | Lima |
 | `carlos@empresa.com` | `1234`     | Lima |
 | `ana@empresa.com`    | `1234`     | Lima |
 | `maria@empresa.com`  | `1234`     | Lima |
