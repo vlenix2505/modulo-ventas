@@ -3,7 +3,7 @@
    ========================================================================== */
 "use strict";
 
-const LS_KEY = "modulo_ventas_db_v2";
+const LS_KEY = "modulo_ventas_db_v3";
 
 /* ----------------------------- Estado / DB -------------------------------- */
 let DB = null;             // { vendedores, clientes, productos, ventas }
@@ -467,7 +467,7 @@ function confirmarPedido() {
 
   const nro = DB.ventas.length + 1;
   const venta = {
-    ventaId: "V" + String(nro).padStart(4, "0"),
+    ventaId: "FT09-" + String(7000000 + nro),
     clienteId: clienteSel.id,
     fecha: new Date().toISOString().slice(0, 10),
     vendedorEmail: sesion.email,

@@ -16,7 +16,11 @@ proceso actual** de toma de pedidos y validarlo con usuarios.
 | `ana@empresa.com`    | `1234`     | Trujillo  |
 | `maria@empresa.com`  | `1234`     | Cusco     |
 
-> Cada vendedor ve únicamente los clientes de su cartera (zona).
+> Cada vendedor ve únicamente los clientes de su cartera (zona). Cada uno tiene al menos
+> 2 clientes del rubro **HOTELES Y ENTRETENIMIENTO** y 2 de **RESTAURANTES**.
+
+> Los datos (productos, categorías y comprobantes) están **inspirados** en una distribuidora
+> de food service: códigos de producto con formato `AAA000` y ventas con formato `FTxx-NNNNNNN`.
 
 ## Flujo
 
