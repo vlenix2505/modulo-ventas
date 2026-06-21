@@ -393,6 +393,8 @@ function agregarAlCarrito(codigo) {
   const p = DB.productos.find((x) => x.codigo === codigo);
   if (!p) return;
   const item = carrito.find((i) => i.codigo === codigo);
+  const enCarrito = item ? item.cantidad : 0;
+  if (enCarrito >= p.stock) { toast(`Sin stock suficiente para ${p.nombre}`, "err"); return; }
   if (item) item.cantidad += 1;
   else carrito.push({ codigo: p.codigo, nombre: p.nombre, precio: p.precio, emoji: p.emoji, imagen: p.imagen, unidad: p.unidad, cantidad: 1 });
   actualizarBadge();
@@ -478,6 +480,13 @@ function confirmarPedido() {
     total: Number(totalCarrito().toFixed(2)),
   };
   DB.ventas.push(venta);
+
+  // Descontar stock de cada producto pedido
+  venta.items.forEach((it) => {
+    const prod = DB.productos.find((p) => p.codigo === it.codigo);
+    if (prod) prod.stock = Math.max(0, prod.stock - it.cantidad);
+  });
+
   guardarDB();
 
   carrito = [];
