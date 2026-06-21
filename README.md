@@ -1,4 +1,4 @@
-# ERP — Prototipo (validación del *as-is*)
+# Bistrap — Prototipo (validación del *as-is*)
 
 Prototipo en **HTML + CSS + JavaScript puro**, sin base de datos: los datos viven en
 memoria y se persisten en el **localStorage** del navegador. Sirve para **emular el

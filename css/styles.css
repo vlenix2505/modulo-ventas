@@ -91,7 +91,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .login-box .brand-mark { margin: 0 auto 4px; }
 .login-box h1 {
-  text-align: center; font-size: 28px; font-weight: 800; letter-spacing: 4px; color: var(--tinta);
+  text-align: center; font-size: 28px; font-weight: 800; letter-spacing: .5px; color: var(--tinta);
 }
 .login-sub { text-align: center; color: var(--texto-suave); font-size: 13.5px; margin-bottom: 8px; }
 .login-box label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #4a554f; }
@@ -113,7 +113,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .brand { display: flex; align-items: center; gap: 11px; padding: 4px 6px 18px; }
 .brand-txt { display: flex; flex-direction: column; line-height: 1.25; }
-.brand-txt strong { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: 2px; }
+.brand-txt strong { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .3px; }
 .brand-txt small { color: #6f827e; font-size: 11px; }
 
 .menu-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .8px; color: #5f726e; padding: 14px 8px 7px; font-weight: 600; }
