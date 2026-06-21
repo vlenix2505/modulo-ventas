@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo de Ventas</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- SheetJS: solo se usa al importar/exportar Excel (requiere internet) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- ===================== LOGIN ===================== -->
+  <section id="vista-login" class="login">
+    <form id="form-login" class="login-card" autocomplete="off">
+      <div class="login-logo">🛒</div>
+      <h1>Módulo de Ventas</h1>
+      <p class="login-sub">Ingresá con tu cuenta de vendedor</p>
+
+      <label>Correo
+        <input type="email" id="login-email" placeholder="juan@empresa.com" required />
+      </label>
+      <label>Contraseña
+        <input type="password" id="login-pass" placeholder="••••" required />
+      </label>
+
+      <button type="submit" class="btn-primary">Ingresar</button>
+      <p id="login-error" class="login-error" hidden></p>
+
+      <details class="login-hint">
+        <summary>¿Usuarios de prueba?</summary>
+        <div id="login-hint-list"></div>
+      </details>
+    </form>
+  </section>
+
+  <!-- ===================== APP ===================== -->
+  <div id="app" class="app" hidden>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">🛒 <span>Módulo de Ventas</span></div>
+      <nav class="menu">
+        <button class="menu-item" data-vista="clientes">👥 Selección de cliente</button>
+        <button class="menu-item" data-vista="historial">📈 Historial de ventas</button>
+        <button class="menu-item" data-vista="catalogo">📦 Toma de pedidos</button>
+        <button class="menu-item" data-vista="pedidos">🧾 Pedidos realizados</button>
+      </nav>
+      <div class="sidebar-foot">
+        <button id="btn-importar" class="link-btn">⬆️ Importar Excel</button>
+        <button id="btn-reset" class="link-btn">♻️ Restaurar datos</button>
+        <input type="file" id="file-importar" accept=".xlsx" hidden />
+      </div>
+    </aside>
+
+    <!-- Contenido -->
+    <main class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-cliente">
+          <span class="topbar-label">Cliente</span>
+          <strong id="topbar-cliente-nombre">— sin seleccionar —</strong>
+          <small id="topbar-cliente-info"></small>
+        </div>
+        <div class="topbar-right">
+          <button id="btn-carrito" class="cart-btn" title="Pedido actual">
+            🛒 <span id="cart-count" class="cart-badge">0</span>
+          </button>
+          <div class="usuario">
+            <span id="usuario-nombre"></span>
+            <button id="btn-logout" class="link-btn">Salir</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Vistas -->
+      <div class="contenido">
+        <div id="vista-clientes" class="vista"></div>
+        <div id="vista-historial" class="vista"></div>
+        <div id="vista-catalogo" class="vista"></div>
+        <div id="vista-pedidos" class="vista"></div>
+      </div>
+    </main>
+
+    <!-- Panel lateral del carrito / pedido -->
+    <div id="cart-overlay" class="overlay" hidden></div>
+    <aside id="cart-panel" class="cart-panel" hidden>
+      <div class="cart-head">
+        <h2>Pedido actual</h2>
+        <button id="btn-cerrar-carrito" class="link-btn">✕</button>
+      </div>
+      <div id="cart-cliente" class="cart-cliente"></div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-foot">
+        <div class="cart-total"><span>Total</span><strong id="cart-total">S/ 0.00</strong></div>
+        <button id="btn-confirmar" class="btn-primary">Confirmar pedido</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
