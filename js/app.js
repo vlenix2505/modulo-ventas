@@ -56,7 +56,7 @@ function searchBox(id, ph) {
 }
 
 /* Color e iniciales para avatares (estable por texto) */
-const AVATAR_COLORES = ["#6d4fd8", "#2d9d78", "#d6822b", "#c0497b", "#3a7bd5", "#8a5cd1", "#1aa3a3", "#c0392b"];
+const AVATAR_COLORES = ["#0d9488", "#2d9d78", "#d6822b", "#c0497b", "#3a7bd5", "#7a5ccc", "#1aa3a3", "#c0392b"];
 function avatarColor(txt) {
   let h = 0;
   for (let i = 0; i < txt.length; i++) h = (h * 31 + txt.charCodeAt(i)) >>> 0;
@@ -103,12 +103,6 @@ function toast(msg, tipo = "") {
    LOGIN
    ========================================================================== */
 function initLogin() {
-  // Pista de usuarios de prueba
-  const hint = DB.vendedores
-    .map((v) => `<code>${v.email}</code> / <code>${v.password}</code>`)
-    .join("<br>");
-  $("#login-hint-list").innerHTML = hint;
-
   $("#form-login").addEventListener("submit", (e) => {
     e.preventDefault();
     const email = $("#login-email").value.trim().toLowerCase();
@@ -616,8 +610,6 @@ function importarExcel(file) {
       }
       guardarDB();
       clienteSel = null; carrito = []; pintarTopbarCliente(); actualizarBadge();
-      // Refrescar pista de login y vista actual
-      initLoginHint();
       navegar("clientes");
       toast("Importado: " + cambios.join(", "), "ok");
     } catch (err) {
@@ -626,12 +618,6 @@ function importarExcel(file) {
     }
   };
   reader.readAsArrayBuffer(file);
-}
-
-function initLoginHint() {
-  if (!$("#login-hint-list")) return;
-  $("#login-hint-list").innerHTML = DB.vendedores
-    .map((v) => `<code>${v.email}</code> / <code>${v.password}</code>`).join("<br>");
 }
 
 /* ============================================================================

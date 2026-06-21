@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Módulo de Ventas</title>
+  <title>ERP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,34 +15,17 @@
 
   <!-- ===================== LOGIN ===================== -->
   <section id="vista-login" class="login">
-    <div class="login-art">
-      <div class="login-art-inner">
-        <div class="brand-mark lg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
-          </svg>
-        </div>
-        <h2>Módulo de Ventas</h2>
-        <p>Gestión de pedidos en campo</p>
-        <ul class="login-feats">
-          <li>Selección de cliente por cartera</li>
-          <li>Historial de ventas al instante</li>
-          <li>Toma de pedidos desde catálogo</li>
-        </ul>
-      </div>
-    </div>
-
-    <form id="form-login" class="login-card" autocomplete="off">
-      <div class="brand-mark sm">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+    <form id="form-login" class="login-box" autocomplete="off">
+      <span class="brand-mark lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="7" height="7" x="3" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="14" rx="1.5"/><rect width="7" height="7" x="3" y="14" rx="1.5"/>
         </svg>
-      </div>
-      <h1>Iniciar sesión</h1>
-      <p class="login-sub">Ingresá con tu cuenta de vendedor</p>
+      </span>
+      <h1>ERP</h1>
+      <p class="login-sub">Accedé con tu cuenta para continuar</p>
 
       <label>Correo
-        <input type="email" id="login-email" placeholder="juan@empresa.com" required />
+        <input type="email" id="login-email" placeholder="usuario@empresa.com" required />
       </label>
       <label>Contraseña
         <input type="password" id="login-pass" placeholder="••••••" required />
@@ -50,12 +33,8 @@
 
       <button type="submit" class="btn-primary">Ingresar</button>
       <p id="login-error" class="login-error" hidden></p>
-
-      <details class="login-hint">
-        <summary>Usuarios de prueba</summary>
-        <div id="login-hint-list"></div>
-      </details>
     </form>
+    <p class="login-pie">Acceso restringido · Personal autorizado</p>
   </section>
 
   <!-- ===================== APP ===================== -->
@@ -65,11 +44,11 @@
     <aside class="sidebar">
       <div class="brand">
         <span class="brand-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="7" height="7" x="3" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="14" rx="1.5"/><rect width="7" height="7" x="3" y="14" rx="1.5"/>
           </svg>
         </span>
-        <span class="brand-txt"><strong>Módulo de Ventas</strong><small>Toma de pedidos</small></span>
+        <span class="brand-txt"><strong>ERP</strong></span>
       </div>
 
       <nav class="menu">
