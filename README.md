@@ -8,16 +8,16 @@ proceso actual** de toma de pedidos y validarlo con usuarios.
 
 ## Usuarios de prueba
 
-| Correo               | Contraseña | Zona      |
-|----------------------|------------|-----------|
-| `juan@empresa.com`   | `1234`     | Lima      |
-| `sofia@empresa.com`  | `1234`     | Arequipa  |
-| `carlos@empresa.com` | `1234`     | Piura     |
-| `ana@empresa.com`    | `1234`     | Trujillo  |
-| `maria@empresa.com`  | `1234`     | Cusco     |
+| Correo               | Contraseña | Sede |
+|----------------------|------------|------|
+| `juan@empresa.com`   | `1234`     | Lima |
+| `sofia@empresa.com`  | `1234`     | Lima |
+| `carlos@empresa.com` | `1234`     | Lima |
+| `ana@empresa.com`    | `1234`     | Lima |
+| `maria@empresa.com`  | `1234`     | Lima |
 
-> Cada vendedor ve únicamente los clientes de su cartera (zona). Cada uno tiene al menos
-> 2 clientes del rubro **HOTELES Y ENTRETENIMIENTO** y 2 de **RESTAURANTES**.
+> Todos los vendedores son de la sede **Lima**. Cada vendedor ve únicamente los clientes de su
+> cartera, con al menos 2 del rubro **HOTELES Y ENTRETENIMIENTO** y 2 de **RESTAURANTES**.
 
 > Los datos (productos, categorías y comprobantes) están **inspirados** en una distribuidora
 > de food service: códigos de producto con formato `AAA000` y ventas con formato `FTxx-NNNNNNN`.

@@ -12,25 +12,25 @@ window.SEED_DATA = {
       "nombre": "Sofía Paredes",
       "email": "sofia@empresa.com",
       "password": "1234",
-      "zona": "Arequipa"
+      "zona": "Lima"
     },
     {
       "nombre": "Carlos Ruiz",
       "email": "carlos@empresa.com",
       "password": "1234",
-      "zona": "Piura"
+      "zona": "Lima"
     },
     {
       "nombre": "Ana Flores",
       "email": "ana@empresa.com",
       "password": "1234",
-      "zona": "Trujillo"
+      "zona": "Lima"
     },
     {
       "nombre": "María Andrade",
       "email": "maria@empresa.com",
       "password": "1234",
-      "zona": "Cusco"
+      "zona": "Lima"
     }
   ],
   "clientes": [
@@ -85,7 +85,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "BOUTIQUE",
       "subrubro2": "INDEPENDIENTE",
-      "sede": "Arequipa",
+      "sede": "Lima",
       "vendedorEmail": "sofia@empresa.com"
     },
     {
@@ -94,7 +94,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "RESORT",
       "subrubro2": "CADENA",
-      "sede": "Arequipa",
+      "sede": "Lima",
       "vendedorEmail": "sofia@empresa.com"
     },
     {
@@ -103,7 +103,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "CEVICHERIA",
       "subrubro2": "MARINA",
-      "sede": "Arequipa",
+      "sede": "Lima",
       "vendedorEmail": "sofia@empresa.com"
     },
     {
@@ -112,7 +112,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "CHIFA",
       "subrubro2": "SALON",
-      "sede": "Arequipa",
+      "sede": "Lima",
       "vendedorEmail": "sofia@empresa.com"
     },
     {
@@ -121,7 +121,7 @@ window.SEED_DATA = {
       "rubro": "CAFETERIAS",
       "subrubro1": "ESPECIALIDAD",
       "subrubro2": "CADENA",
-      "sede": "Arequipa",
+      "sede": "Lima",
       "vendedorEmail": "sofia@empresa.com"
     },
     {
@@ -130,7 +130,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "CASINO",
       "subrubro2": "ENTRETENIMIENTO",
-      "sede": "Piura",
+      "sede": "Lima",
       "vendedorEmail": "carlos@empresa.com"
     },
     {
@@ -139,7 +139,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "4 ESTRELLAS",
       "subrubro2": "INDEPENDIENTE",
-      "sede": "Piura",
+      "sede": "Lima",
       "vendedorEmail": "carlos@empresa.com"
     },
     {
@@ -148,7 +148,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "PARRILLA",
       "subrubro2": "GOURMET",
-      "sede": "Piura",
+      "sede": "Lima",
       "vendedorEmail": "carlos@empresa.com"
     },
     {
@@ -157,7 +157,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "POLLERIA",
       "subrubro2": "CADENA",
-      "sede": "Piura",
+      "sede": "Lima",
       "vendedorEmail": "carlos@empresa.com"
     },
     {
@@ -166,7 +166,7 @@ window.SEED_DATA = {
       "rubro": "CATERING Y EVENTOS",
       "subrubro1": "CORPORATIVO",
       "subrubro2": "PREMIUM",
-      "sede": "Piura",
+      "sede": "Lima",
       "vendedorEmail": "carlos@empresa.com"
     },
     {
@@ -175,7 +175,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "CASINO",
       "subrubro2": "ENTRETENIMIENTO",
-      "sede": "Trujillo",
+      "sede": "Lima",
       "vendedorEmail": "ana@empresa.com"
     },
     {
@@ -184,7 +184,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "5 ESTRELLAS",
       "subrubro2": "CADENA",
-      "sede": "Trujillo",
+      "sede": "Lima",
       "vendedorEmail": "ana@empresa.com"
     },
     {
@@ -193,7 +193,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "CEVICHERIA",
       "subrubro2": "MARINA",
-      "sede": "Trujillo",
+      "sede": "Lima",
       "vendedorEmail": "ana@empresa.com"
     },
     {
@@ -202,7 +202,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "CRIOLLO",
       "subrubro2": "FAMILIAR",
-      "sede": "Trujillo",
+      "sede": "Lima",
       "vendedorEmail": "ana@empresa.com"
     },
     {
@@ -211,7 +211,7 @@ window.SEED_DATA = {
       "rubro": "COMIDA RAPIDA",
       "subrubro1": "HAMBURGUESAS",
       "subrubro2": "FAST FOOD",
-      "sede": "Trujillo",
+      "sede": "Lima",
       "vendedorEmail": "ana@empresa.com"
     },
     {
@@ -220,7 +220,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "CLUB",
       "subrubro2": "ENTRETENIMIENTO",
-      "sede": "Cusco",
+      "sede": "Lima",
       "vendedorEmail": "maria@empresa.com"
     },
     {
@@ -229,7 +229,7 @@ window.SEED_DATA = {
       "rubro": "HOTELES Y ENTRETENIMIENTO",
       "subrubro1": "BOUTIQUE",
       "subrubro2": "INDEPENDIENTE",
-      "sede": "Cusco",
+      "sede": "Lima",
       "vendedorEmail": "maria@empresa.com"
     },
     {
@@ -238,7 +238,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "PARRILLA",
       "subrubro2": "SALON",
-      "sede": "Cusco",
+      "sede": "Lima",
       "vendedorEmail": "maria@empresa.com"
     },
     {
@@ -247,7 +247,7 @@ window.SEED_DATA = {
       "rubro": "RESTAURANTES",
       "subrubro1": "CEVICHERIA",
       "subrubro2": "FAMILIAR",
-      "sede": "Cusco",
+      "sede": "Lima",
       "vendedorEmail": "maria@empresa.com"
     },
     {
@@ -256,7 +256,7 @@ window.SEED_DATA = {
       "rubro": "MINIMARKETS",
       "subrubro1": "INDEPENDIENTE",
       "subrubro2": "BARRIO",
-      "sede": "Cusco",
+      "sede": "Lima",
       "vendedorEmail": "maria@empresa.com"
     }
   ],

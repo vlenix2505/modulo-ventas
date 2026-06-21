@@ -41,10 +41,10 @@ JS_DIR.mkdir(exist_ok=True)
 # --------------------------------------------------------------------------- #
 VENDEDORES = [
     {"nombre": "Juan Ramírez",   "email": "juan@empresa.com",   "password": "1234", "zona": "Lima"},
-    {"nombre": "Sofía Paredes",  "email": "sofia@empresa.com",  "password": "1234", "zona": "Arequipa"},
-    {"nombre": "Carlos Ruiz",    "email": "carlos@empresa.com", "password": "1234", "zona": "Piura"},
-    {"nombre": "Ana Flores",     "email": "ana@empresa.com",    "password": "1234", "zona": "Trujillo"},
-    {"nombre": "María Andrade",  "email": "maria@empresa.com",  "password": "1234", "zona": "Cusco"},
+    {"nombre": "Sofía Paredes",  "email": "sofia@empresa.com",  "password": "1234", "zona": "Lima"},
+    {"nombre": "Carlos Ruiz",    "email": "carlos@empresa.com", "password": "1234", "zona": "Lima"},
+    {"nombre": "Ana Flores",     "email": "ana@empresa.com",    "password": "1234", "zona": "Lima"},
+    {"nombre": "María Andrade",  "email": "maria@empresa.com",  "password": "1234", "zona": "Lima"},
 ]
 
 # --------------------------------------------------------------------------- #
