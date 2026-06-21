@@ -24,6 +24,48 @@ function imgTile(p, cls) {
          `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" onerror="this.remove()"></div>`;
 }
 
+/* ----------------------------- Iconos SVG --------------------------------- */
+const ICONS = {
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  chart: '<path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>',
+  clipboard: '<rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>',
+  receipt: '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
+  search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+  minus: '<path d="M5 12h14"/>',
+  trash: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+  pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  inbox: '<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>',
+  hand: '<path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/>',
+};
+function svg(name, cls = "") {
+  return `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ""}</svg>`;
+}
+
+/* Encabezado estándar de cada vista */
+function vistaHead(icono, titulo, subtitulo) {
+  return `<div class="vista-head">
+    ${svg(icono, "vista-head-ico")}
+    <div><h2>${titulo}</h2><p>${subtitulo}</p></div>
+  </div>`;
+}
+
+/* Caja de búsqueda con lupa */
+function searchBox(id, ph) {
+  return `<div class="search">${svg("search")}<input type="text" id="${id}" placeholder="${ph}"></div>`;
+}
+
+/* Color e iniciales para avatares (estable por texto) */
+const AVATAR_COLORES = ["#6d4fd8", "#2d9d78", "#d6822b", "#c0497b", "#3a7bd5", "#8a5cd1", "#1aa3a3", "#c0392b"];
+function avatarColor(txt) {
+  let h = 0;
+  for (let i = 0; i < txt.length; i++) h = (h * 31 + txt.charCodeAt(i)) >>> 0;
+  return AVATAR_COLORES[h % AVATAR_COLORES.length];
+}
+function iniciales(nombre) {
+  return nombre.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join("");
+}
+
 /* Carga DB desde localStorage; si no existe, clona los datos semilla. */
 function cargarDB() {
   const guardado = localStorage.getItem(LS_KEY);
@@ -90,6 +132,9 @@ function entrarApp() {
   $("#vista-login").hidden = true;
   $("#app").hidden = false;
   $("#usuario-nombre").textContent = `${sesion.nombre} · ${sesion.zona}`;
+  const av = $("#usuario-avatar");
+  av.textContent = iniciales(sesion.nombre);
+  av.style.background = avatarColor(sesion.nombre);
   clienteSel = null; carrito = [];
   pintarTopbarCliente(); actualizarBadge();
   navegar("clientes");
@@ -129,14 +174,9 @@ function renderClientes() {
   const clientes = clientesDelVendedor();
 
   cont.innerHTML = `
-    <div class="vista-head">
-      <div>
-        <h2>Selección de cliente</h2>
-        <p>${clientes.length} cliente(s) asignados a tu cartera</p>
-      </div>
-    </div>
+    ${vistaHead("users", "Selección de cliente", `${clientes.length} cliente(s) asignados a tu cartera`)}
     <div class="toolbar">
-      <input type="text" id="busca-cliente" placeholder="Buscar por nombre o código…" />
+      ${searchBox("busca-cliente", "Buscar por nombre o código…")}
       <select id="filtro-rubro"><option value="">Todos los rubros</option></select>
     </div>
     <div id="grid-clientes" class="grid-clientes"></div>
@@ -157,21 +197,24 @@ function renderClientes() {
     });
     const grid = $("#grid-clientes");
     if (!filtrados.length) {
-      grid.innerHTML = `<div class="vacio"><div class="ico">🔍</div>No se encontraron clientes.</div>`;
+      grid.innerHTML = `<div class="vacio"><div class="ico">${svg("search")}</div>No se encontraron clientes.</div>`;
       return;
     }
     grid.innerHTML = filtrados.map((c) => `
       <div class="card-cliente ${clienteSel && clienteSel.id === c.id ? "sel" : ""}" data-id="${c.id}">
         <div class="cc-top">
-          <h3>${c.nombre}</h3>
-          <span class="cc-id">${c.id}</span>
+          <span class="cc-avatar" style="background:${avatarColor(c.nombre)}">${iniciales(c.nombre)}</span>
+          <div class="cc-name">
+            <h3 title="${esc(c.nombre)}">${c.nombre}</h3>
+            <span class="cc-id">${c.id}</span>
+          </div>
         </div>
         <div class="chips">
           <span class="chip">${c.rubro}</span>
           ${c.subrubro1 ? `<span class="chip gris">${c.subrubro1}</span>` : ""}
           ${c.subrubro2 ? `<span class="chip gris">${c.subrubro2}</span>` : ""}
         </div>
-        <div class="cc-sede">📍 ${c.sede}</div>
+        <div class="cc-sede">${svg("pin")} ${c.sede}</div>
       </div>
     `).join("");
 
@@ -229,18 +272,13 @@ function renderHistorial() {
   const totalHist = ventas.reduce((s, v) => s + v.total, 0);
 
   cont.innerHTML = `
-    <div class="vista-head">
-      <div>
-        <h2>Historial de ventas</h2>
-        <p>${clienteSel.nombre} · ${ventas.length} pedido(s) · acumulado ${money(totalHist)}</p>
-      </div>
-    </div>
+    ${vistaHead("chart", "Historial de ventas", `${clienteSel.nombre} · ${ventas.length} pedido(s) · acumulado ${money(totalHist)}`)}
     <div id="lista-historial"></div>
   `;
 
   const lista = $("#lista-historial");
   if (!ventas.length) {
-    lista.innerHTML = `<div class="vacio"><div class="ico">📭</div>Este cliente aún no tiene ventas registradas.</div>`;
+    lista.innerHTML = `<div class="vacio"><div class="ico">${svg("inbox")}</div>Este cliente aún no tiene ventas registradas.</div>`;
     return;
   }
   lista.innerHTML = ventas.map(ventaCardHTML).join("");
@@ -259,9 +297,10 @@ function ventaCardHTML(v) {
   return `
     <div class="venta-card" data-id="${v.ventaId}">
       <div class="venta-head">
+        <span class="venta-tag">${svg("receipt")}</span>
         <div class="venta-meta">
           <span class="venta-id">${v.ventaId}</span>
-          <span class="venta-fecha">📅 ${v.fecha} · ${v.items.length} ítem(s)</span>
+          <span class="venta-fecha">${v.fecha} · ${v.items.length} ítem(s)</span>
         </div>
         <div class="venta-right">
           <span class="venta-total">${money(v.total)}</span>
@@ -289,15 +328,10 @@ function enlazarAcordeon(scope) {
 function renderCatalogo() {
   const cont = $("#vista-catalogo");
   cont.innerHTML = `
-    <div class="vista-head">
-      <div>
-        <h2>Toma de pedidos</h2>
-        <p>${DB.productos.length} productos en catálogo</p>
-      </div>
-    </div>
+    ${vistaHead("clipboard", "Toma de pedidos", `${DB.productos.length} productos en catálogo`)}
     ${clienteSel ? "" : avisoSinClienteInline()}
     <div class="toolbar">
-      <input type="text" id="busca-prod" placeholder="Buscar por nombre o código…" />
+      ${searchBox("busca-prod", "Buscar por nombre o código…")}
       <select id="filtro-cat"><option value="">Todas las categorías</option></select>
     </div>
     <div class="tabla-wrap">
@@ -327,7 +361,7 @@ function renderCatalogo() {
     });
     const tb = $("#tbody-prod");
     if (!filtrados.length) {
-      tb.innerHTML = `<tr><td colspan="8"><div class="vacio"><div class="ico">🔍</div>Sin resultados.</div></td></tr>`;
+      tb.innerHTML = `<tr><td colspan="8"><div class="vacio"><div class="ico">${svg("search")}</div>Sin resultados.</div></td></tr>`;
       return;
     }
     tb.innerHTML = filtrados.map((p) => {
@@ -336,13 +370,13 @@ function renderCatalogo() {
       <tr>
         <td>${imgTile(p, "prod-img")}</td>
         <td class="col-cod">${p.codigo}</td>
-        <td>${p.nombre}</td>
-        <td>${p.categoria}</td>
-        <td>${p.unidad}</td>
+        <td class="td-nombre">${p.nombre}</td>
+        <td><span class="cat-tag">${p.categoria}</span></td>
+        <td><span class="unidad">${p.unidad}</span></td>
         <td class="col-num precio">${money(p.precio)}</td>
         <td class="col-num"><span class="stock-pill ${bajo ? "bajo" : ""}">${p.stock}</span></td>
         <td class="col-num">
-          <button class="btn-add" data-cod="${p.codigo}" ${clienteSel ? "" : "disabled title='Seleccioná un cliente primero'"}>＋</button>
+          <button class="btn-add" data-cod="${p.codigo}" ${clienteSel ? "" : "disabled title='Seleccioná un cliente primero'"}>${svg("plus")}</button>
         </td>
       </tr>`;
     }).join("");
@@ -416,12 +450,12 @@ function renderCarrito() {
           <div class="ci-precio">${money(i.precio)} · ${i.unidad}</div>
         </div>
         <div class="qty">
-          <button data-cod="${i.codigo}" data-d="-1">−</button>
+          <button data-cod="${i.codigo}" data-d="-1">${svg("minus")}</button>
           <span>${i.cantidad}</span>
-          <button data-cod="${i.codigo}" data-d="1">＋</button>
+          <button data-cod="${i.codigo}" data-d="1">${svg("plus")}</button>
         </div>
         <span class="ci-sub">${money(i.precio * i.cantidad)}</span>
-        <button class="ci-del" data-del="${i.codigo}" title="Quitar">🗑️</button>
+        <button class="ci-del" data-del="${i.codigo}" title="Quitar">${svg("trash")}</button>
       </div>
     `).join("");
 
@@ -469,17 +503,12 @@ function renderPedidos() {
     .sort((a, b) => b.ventaId.localeCompare(a.ventaId));
 
   cont.innerHTML = `
-    <div class="vista-head">
-      <div>
-        <h2>Pedidos realizados</h2>
-        <p>${mios.length} pedido(s) asociados a ${sesion.nombre}</p>
-      </div>
-    </div>
+    ${vistaHead("receipt", "Pedidos realizados", `${mios.length} pedido(s) asociados a ${sesion.nombre}`)}
     <div id="lista-pedidos"></div>
   `;
   const lista = $("#lista-pedidos");
   if (!mios.length) {
-    lista.innerHTML = `<div class="vacio"><div class="ico">🧾</div>Todavía no registraste pedidos.</div>`;
+    lista.innerHTML = `<div class="vacio"><div class="ico">${svg("receipt")}</div>Todavía no registraste pedidos.</div>`;
     return;
   }
   const nombreCli = (id) => (DB.clientes.find((c) => c.id === id) || {}).nombre || id;
@@ -487,8 +516,8 @@ function renderPedidos() {
     const html = ventaCardHTML(v);
     // Insertar nombre del cliente en la línea de fecha
     return html.replace(
-      `<span class="venta-fecha">📅 ${v.fecha}`,
-      `<span class="venta-fecha">👤 ${nombreCli(v.clienteId)} · 📅 ${v.fecha}`
+      `<span class="venta-fecha">${v.fecha}`,
+      `<span class="venta-fecha">${nombreCli(v.clienteId)} · ${v.fecha}`
     );
   }).join("");
   enlazarAcordeon(lista);
@@ -499,9 +528,9 @@ function renderPedidos() {
    ========================================================================== */
 function avisoSinCliente(accion) {
   return `<div class="vacio">
-    <div class="ico">👈</div>
+    <div class="ico">${svg("users")}</div>
     Seleccioná un cliente para ${accion}.
-    <div style="margin-top:14px"><button class="btn-primary" onclick="navegar('clientes')">Ir a selección de cliente</button></div>
+    <div style="margin-top:16px"><button class="btn-primary" onclick="navegar('clientes')">Ir a selección de cliente</button></div>
   </div>`;
 }
 function avisoSinClienteInline() {

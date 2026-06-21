@@ -4,31 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Módulo de Ventas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- SheetJS: solo se usa al importar/exportar Excel (requiere internet) -->
+  <!-- SheetJS: solo se usa al importar Excel (requiere internet) -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
   <!-- ===================== LOGIN ===================== -->
   <section id="vista-login" class="login">
+    <div class="login-art">
+      <div class="login-art-inner">
+        <div class="brand-mark lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+          </svg>
+        </div>
+        <h2>Módulo de Ventas</h2>
+        <p>Gestión de pedidos en campo</p>
+        <ul class="login-feats">
+          <li>Selección de cliente por cartera</li>
+          <li>Historial de ventas al instante</li>
+          <li>Toma de pedidos desde catálogo</li>
+        </ul>
+      </div>
+    </div>
+
     <form id="form-login" class="login-card" autocomplete="off">
-      <div class="login-logo">🛒</div>
-      <h1>Módulo de Ventas</h1>
+      <div class="brand-mark sm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+        </svg>
+      </div>
+      <h1>Iniciar sesión</h1>
       <p class="login-sub">Ingresá con tu cuenta de vendedor</p>
 
       <label>Correo
         <input type="email" id="login-email" placeholder="juan@empresa.com" required />
       </label>
       <label>Contraseña
-        <input type="password" id="login-pass" placeholder="••••" required />
+        <input type="password" id="login-pass" placeholder="••••••" required />
       </label>
 
       <button type="submit" class="btn-primary">Ingresar</button>
       <p id="login-error" class="login-error" hidden></p>
 
       <details class="login-hint">
-        <summary>¿Usuarios de prueba?</summary>
+        <summary>Usuarios de prueba</summary>
         <div id="login-hint-list"></div>
       </details>
     </form>
@@ -39,16 +63,45 @@
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="brand">🛒 <span>Módulo de Ventas</span></div>
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18l-1.5 11a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+          </svg>
+        </span>
+        <span class="brand-txt"><strong>Módulo de Ventas</strong><small>Toma de pedidos</small></span>
+      </div>
+
       <nav class="menu">
-        <button class="menu-item" data-vista="clientes">👥 Selección de cliente</button>
-        <button class="menu-item" data-vista="historial">📈 Historial de ventas</button>
-        <button class="menu-item" data-vista="catalogo">📦 Toma de pedidos</button>
-        <button class="menu-item" data-vista="pedidos">🧾 Pedidos realizados</button>
+        <p class="menu-label">Operación</p>
+        <button class="menu-item" data-vista="clientes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Selección de cliente</span>
+        </button>
+        <button class="menu-item" data-vista="historial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          <span>Historial de ventas</span>
+        </button>
+        <button class="menu-item" data-vista="catalogo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+          <span>Toma de pedidos</span>
+        </button>
+        <button class="menu-item" data-vista="pedidos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+          <span>Pedidos realizados</span>
+        </button>
       </nav>
+
       <div class="sidebar-foot">
-        <button id="btn-importar" class="link-btn">⬆️ Importar Excel</button>
-        <button id="btn-reset" class="link-btn">♻️ Restaurar datos</button>
+        <p class="menu-label">Datos</p>
+        <button id="btn-importar" class="foot-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+          Importar Excel
+        </button>
+        <button id="btn-reset" class="foot-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          Restaurar datos
+        </button>
         <input type="file" id="file-importar" accept=".xlsx" hidden />
       </div>
     </aside>
@@ -58,17 +111,24 @@
       <!-- Topbar -->
       <header class="topbar">
         <div class="topbar-cliente">
-          <span class="topbar-label">Cliente</span>
-          <strong id="topbar-cliente-nombre">— sin seleccionar —</strong>
-          <small id="topbar-cliente-info"></small>
+          <svg class="topbar-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h.01M9 12h.01M9 15h.01"/></svg>
+          <div>
+            <span class="topbar-label">Cliente activo</span>
+            <strong id="topbar-cliente-nombre">— sin seleccionar —</strong>
+            <small id="topbar-cliente-info"></small>
+          </div>
         </div>
         <div class="topbar-right">
           <button id="btn-carrito" class="cart-btn" title="Pedido actual">
-            🛒 <span id="cart-count" class="cart-badge">0</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span id="cart-count" class="cart-badge">0</span>
           </button>
           <div class="usuario">
-            <span id="usuario-nombre"></span>
-            <button id="btn-logout" class="link-btn">Salir</button>
+            <span class="usuario-avatar" id="usuario-avatar">·</span>
+            <div class="usuario-info">
+              <span id="usuario-nombre"></span>
+              <button id="btn-logout" class="link-btn">Cerrar sesión</button>
+            </div>
           </div>
         </div>
       </header>
@@ -87,13 +147,18 @@
     <aside id="cart-panel" class="cart-panel" hidden>
       <div class="cart-head">
         <h2>Pedido actual</h2>
-        <button id="btn-cerrar-carrito" class="link-btn">✕</button>
+        <button id="btn-cerrar-carrito" class="icon-btn" title="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
       <div id="cart-cliente" class="cart-cliente"></div>
       <div id="cart-items" class="cart-items"></div>
       <div class="cart-foot">
         <div class="cart-total"><span>Total</span><strong id="cart-total">S/ 0.00</strong></div>
-        <button id="btn-confirmar" class="btn-primary">Confirmar pedido</button>
+        <button id="btn-confirmar" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Confirmar pedido
+        </button>
       </div>
     </aside>
   </div>
