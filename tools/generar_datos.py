@@ -156,12 +156,22 @@ for vi, v in enumerate(VENDEDORES):
 # --------------------------------------------------------------------------- #
 # 4) VENTAS HISTÓRICAS  — id estilo comprobante FTxx-NNNNNNN
 # --------------------------------------------------------------------------- #
+# S1: clientes con historial (≥4 compras)   S2: cold-start (≤3 compras)
+_S1 = {'CL001','CL003','CL006','CL008','CL011','CL014','CL017','CL018','CL021','CL023'}
+_S2 = {'CL002','CL004','CL007','CL009','CL012','CL013','CL016','CL019','CL022','CL024'}
+
 def generar_ventas() -> list[dict]:
     ventas = []
     nro = 0
     hoy = date(2026, 6, 21)
     for cli in CLIENTES:
-        for _ in range(random.randint(2, 4)):
+        if cli['id'] in _S1:
+            n_ventas = random.randint(11, 15)
+        elif cli['id'] in _S2:
+            n_ventas = random.randint(2, 3)
+        else:
+            n_ventas = random.randint(2, 4)
+        for _ in range(n_ventas):
             nro += 1
             dias_atras = random.randint(5, 250)
             fecha = (hoy - timedelta(days=dias_atras)).isoformat()
