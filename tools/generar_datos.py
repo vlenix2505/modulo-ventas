@@ -43,8 +43,8 @@ VENDEDORES = [
     {"nombre": "Juan Ramírez",   "email": "juan@empresa.com",   "password": "1234", "zona": "Lima"},
     {"nombre": "Roberto Laos",  "email": "roberto@empresa.com",  "password": "1234", "zona": "Lima"},
     {"nombre": "Carlos Ruiz",    "email": "carlos@empresa.com", "password": "1234", "zona": "Lima"},
-    {"nombre": "Ana Flores",     "email": "ana@empresa.com",    "password": "1234", "zona": "Lima"},
-    {"nombre": "Mario Gomez",  "email": "mario@empresa.com",  "password": "1234", "zona": "Lima"},
+    {"nombre": "Hugo Flores",    "email": "hugo@empresa.com",   "password": "1234", "zona": "Lima"},
+    {"nombre": "Maria Gomez",  "email": "maria@empresa.com",  "password": "1234", "zona": "Lima"},
 ]
 
 # --------------------------------------------------------------------------- #
