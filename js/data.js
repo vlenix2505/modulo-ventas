@@ -27,7 +27,7 @@ window.SEED_DATA = {
       "zona": "Lima"
     },
     {
-      "nombre": "María Gomez",
+      "nombre": "Mario Gomez",
       "email": "maria@empresa.com",
       "password": "1234",
       "zona": "Lima"
