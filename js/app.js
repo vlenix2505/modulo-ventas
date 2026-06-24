@@ -3,7 +3,7 @@
    ========================================================================== */
 "use strict";
 
-const LS_KEY = "modulo_ventas_db_v5";
+const LS_KEY = "modulo_ventas_db_v6";
 
 /* ----------------------------- Estado / DB -------------------------------- */
 let DB = null;             // { vendedores, clientes, productos, ventas }

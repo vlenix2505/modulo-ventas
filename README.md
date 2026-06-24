@@ -14,7 +14,7 @@ proceso actual** de toma de pedidos y validarlo con usuarios.
 | Roberto Laos  | `roberto@empresa.com`  | `1234`     | Lima |
 | Carlos Ruiz   | `carlos@empresa.com`   | `1234`     | Lima |
 | Ana Flores    | `ana@empresa.com`      | `1234`     | Lima |
-| Mario Gomez   | `maria@empresa.com`    | `1234`     | Lima |
+| Mario Gomez   | `mario@empresa.com`    | `1234`     | Lima |
 
 > Todos los vendedores son de la sede **Lima**. Cada vendedor ve únicamente los clientes de su
 > cartera, con al menos 2 del rubro **HOTELES Y ENTRETENIMIENTO** y 2 de **RESTAURANTES**.
